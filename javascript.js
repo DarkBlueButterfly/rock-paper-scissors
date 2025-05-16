@@ -35,10 +35,44 @@ function getComputerChoice() {
 let computerChoice = getComputerChoice();
 
 if (computerChoice === 0){
-    console.log("Rock"); 
+    console.log("rock"); 
 } else if(computerChoice === 1) {
-    console.log("Paper");
+    console.log("paper");
 } else if(computerChoice === 2) {
-    console.log("Scissors");
+    console.log("scissors");
 }
+
+let getHumanChoice = prompt("Rock, paper or scissors?");
+let humanChoice = getHumanChoice.toLowerCase();
+
+console.log(humanChoice);
+
+
+
+/*
+function getHumanChoice() {
+    return prompt("Rock, paper or scissors?");
+}*/
+
+/*
+//console.log(getHumanChoice());
+let humanChoice = getHumanChoice();
+humanChoice.sort((a,b) => a.localeCompare(b, "en", {ignorePunctuation: true}));
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+//humanChoice = humanChoice.toLowerCase() === humanChoice.toLowerCase();
+
+//console.log(getHumanChoice());
+
+function playRound(humanChoice, computerChoice) {
+
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+*/
 
