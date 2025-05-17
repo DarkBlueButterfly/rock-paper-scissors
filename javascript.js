@@ -20,6 +20,16 @@ console.log(computerChoice);
 let userChoice = prompt("Rock, paper or scissors?", "rock");
 let humanChoice = userChoice.toLowerCase();
 
+/*
+//testing: didn't work... try again...
+function getHumanChoice() {
+    userChoice = prompt("Rock, paper or scissors?", "rock");
+    userChoice.toLowerCase();
+} 
+let userChoice = getHumanChoice();
+let humanChoice = userChoice.toLowerCase();
+*/
+
 while (true) {
     if (humanChoice == "rock") {
         break;
@@ -30,7 +40,7 @@ while (true) {
     } else {
         humanChoice = prompt("Please choose rock, paper or scissors");
     }
-}        
+}       
     
 console.log(humanChoice);
 
@@ -58,17 +68,15 @@ console.log(winner);
 let humanScore = 0;
 let computerScore = 0;
 
-/*
-//humanChoice = humanChoice.toLowerCase() === humanChoice.toLowerCase();
-
-//console.log(getHumanChoice());
+//loop every time winner is "you win" +1 human?
 
 function playRound(humanChoice, computerChoice) {
-
+    let winner = findWinner(computerChoice, humanChoice);
+    return winner; 
 }
+/*
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 */
-
