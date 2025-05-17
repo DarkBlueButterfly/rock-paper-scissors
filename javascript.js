@@ -34,10 +34,29 @@ while (true) {
     
 console.log(humanChoice);
 
+
+//to determine the winner:
+function findWinner(computerChoice, humanChoice) {
+    if (computerChoice === humanChoice) {
+        return "it's a tie!";
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        return "You win!";
+    } else {
+        return "You lose!";
+    }
+}
+
+let winner = findWinner(computerChoice, humanChoice);
+
+console.log(winner);
+
+
 let humanScore = 0;
 let computerScore = 0;
-
-
 
 /*
 //humanChoice = humanChoice.toLowerCase() === humanChoice.toLowerCase();
