@@ -35,36 +35,32 @@ function getHumanChoice() {
 let humanChoice = getHumanChoice();
 console.log(humanChoice); //check
 
+let humanScore = 0;
+let computerScore = 0;
 
 //to determine the winner:
-function findWinner(computerChoice, humanChoice) {
+function playRound(computerChoice, humanChoice) {
     if (computerChoice === humanChoice) {
-        return "it's a tie!";
+        console.log("It's a tie!");
     } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        return "You win!";
+        humanScore++; 
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
     } else {
-        return "You lose!";
+        computerScore++; 
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}...`);
     }
 }
+playRound(computerChoice, humanChoice);
+console.log(humanScore)
 
-let winner = findWinner(computerChoice, humanChoice);
+//let winner = findWinner(computerChoice, humanChoice);
 
-console.log(winner);
+//console.log(winner);
 
-
-let humanScore = 0;
-let computerScore = 0;
-
-//loop every time winner is "you win" +1 human?
-
-function playRound(humanChoice, computerChoice) {
-    let winner = findWinner(computerChoice, humanChoice);
-    return winner; 
-}
 /*
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
