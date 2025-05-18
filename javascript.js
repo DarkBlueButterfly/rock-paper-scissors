@@ -1,48 +1,39 @@
 //console.log("hello world again!");
 //randomizing the computer's choice:
-
 function getComputerChoice() {
-    return Math.floor(Math.random()*3);
+    result = Math.floor(Math.random()*3);
+    if (result === 0){
+        return ("rock"); 
+    } else if(result === 1) {
+        return ("paper");
+    } else if(result === 2) {
+        return ("scissors");
+    }
 }
 
 let computerChoice = getComputerChoice();
+console.log(computerChoice); //check
 
-if (computerChoice === 0){
-    computerChoice = ("rock"); 
-} else if(computerChoice === 1) {
-    computerChoice = ("paper");
-} else if(computerChoice === 2) {
-    computerChoice = ("scissors");
-}
-
-console.log(computerChoice);
-
-let userChoice = prompt("Rock, paper or scissors?", "rock");
-let humanChoice = userChoice.toLowerCase();
-
-/*
-//testing: didn't work... try again...
+//prompt user: 
 function getHumanChoice() {
     userChoice = prompt("Rock, paper or scissors?", "rock");
-    userChoice.toLowerCase();
-} 
-let userChoice = getHumanChoice();
-let humanChoice = userChoice.toLowerCase();
-*/
-
-while (true) {
+    let humanChoice = userChoice.toLowerCase();
+    while (true) {
     if (humanChoice == "rock") {
-        break;
-    } else if (humanChoice == "paper") {
-        break;
-    } else if (humanChoice == "scissors") {
-        break;
-    } else {
-        humanChoice = prompt("Please choose rock, paper or scissors");
-    }
-}       
-    
-console.log(humanChoice);
+            break;
+        } else if (humanChoice == "paper") {
+            break;
+        } else if (humanChoice == "scissors") {
+            break;
+        } else {
+            humanChoice = prompt("Please choose rock, paper or scissors");
+        }
+    }  
+    return humanChoice;
+}
+
+let humanChoice = getHumanChoice();
+console.log(humanChoice); //check
 
 
 //to determine the winner:
