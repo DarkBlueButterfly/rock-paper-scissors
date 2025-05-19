@@ -1,2 +1,5 @@
 # rock-paper-scissors
-The first project through The Odin Project implementing my understanding of JavaScript so far! Let's see how this project will turn out with this new knowledge and skills!
+The first project through The Odin Project implementing my understanding of JavaScript so far! Let's see how this project will turn out with this new knowledge and skill!
+Thoughts and Reflections: 
+Working through this project, I realized how I knew nothing about how functions worked... I would write simplistic functions that just did one thing, but I knew that wouldn't accomplish the goals of this project. I knew functions could be more complex than that but throwing things together won't work. So, I looked back and remembered one of the videos recommended by the course. This explained how JavaScript works with functions, and everything just clicked after that. I had to throw away a lot of my code because I knew it wasn't going to work. 
+Now that I finished this project, it was a fun journey of not knowing what to do and wondering why this or that didn't work, into seeing why and where the code went wrong and troubleshooting how to make it work or how to make it work again. 
