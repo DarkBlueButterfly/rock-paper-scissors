@@ -9,6 +9,7 @@ function getComputerChoice() {
         return ("scissors");
     }
 }
+
 /*check
 let computerChoice = getComputerChoice();
 console.log(computerChoice); //check
@@ -31,6 +32,7 @@ function getHumanChoice() {
     }  
     return humanChoice;
 }
+
 /*check
 let humanChoice = getHumanChoice();
 console.log(humanChoice); //check
@@ -40,7 +42,7 @@ console.log(humanChoice); //check
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
-
+    //looping for 5 rounds:
     for (let i = 1; i < 6; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
@@ -64,13 +66,14 @@ function playGame() {
         playRound (computerSelection, humanSelection);
         console.log(`Round ${i}: User Score: ${humanScore} || Computer Score: ${computerScore}`);
     }
-        if (humanScore > computerScore) {
-            console.log("You won the series!");
-        } else if (computerScore > humanScore) {
-            console.log("You lost the game!");
-        } else {
-            console.log("It's a tie game!")
-        }
+    //Score tracking:
+    if (humanScore > computerScore) {
+        console.log("You won the series!");
+    } else if (computerScore > humanScore) {
+        console.log("You lost the game!");
+    } else {
+        console.log("It's a tie game!")
+    }
 }
 
 playGame();
