@@ -15,6 +15,7 @@ let computerChoice = getComputerChoice();
 console.log(computerChoice); //check
 */
 
+/*
 //prompt user: 
 function getHumanChoice() {
     userChoice = prompt("Rock, paper or scissors?", "rock");
@@ -32,12 +33,14 @@ function getHumanChoice() {
     }  
     return humanChoice;
 }
+*/
 
 /*check
 let humanChoice = getHumanChoice();
 console.log(humanChoice); //check
 */
 
+/*
 //Play 5 rounds:
 function playGame() {
     let humanScore = 0;
@@ -77,3 +80,65 @@ function playGame() {
 }
 
 playGame();
+*/
+
+function getHumanChoice() {
+    const rock = document.querySelector("#btn-rock");
+    const paper = document.querySelector("#btn-paper");
+    const scissors = document.querySelector("#btn-scissors");
+    
+    const buttons = document.querySelectorAll("button");
+    
+    //let humanChoice = "string";
+    
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            console.log(button.id);
+        });
+    });
+
+    // if(rock.onclick) {
+    //     humanChoice = "rock";
+    // } else if (paper.onclick) {
+    //     humanChoice = "paper";
+    // } else if(scissors.onclick) {
+    //     humanChoice = "scissors";
+    // }
+    // return humanChoice;
+
+    // rock.addEventListener("click", () => {
+    //     console.log("rock");
+    //     return humanChoice = "rock";
+    // });
+    // paper.addEventListener("click", () => {
+    //     console.log("paper");
+    //     return humanChoice = "paper";
+    // });
+    // scissors.addEventListener("click", () => {
+    //     console.log("scissors");
+    //     return humanChoice = "scissors";
+    // });
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+function playRound(computerChoice, humanChoice) {
+    if (computerChoice === humanChoice) {
+        console.log(`It's a tie! You both chose ${humanChoice}!`);
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        //humanScore++; 
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+    } else {
+        //computerScore++; 
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}...`);
+    }
+}
+
+playRound (computerSelection, humanSelection);
+//console.log(`Round ${i}: User Score: ${humanScore} || Computer Score: ${computerScore}`);
+    
