@@ -59,12 +59,14 @@ let computerPoint = 1;
 function humanScore() {
     let score = humanPoint++;
     console.log(`User score is ${score}`);
+    scoreDisplay.textContent = `User score: ${score}`;
     winCount(score);
 }
 
 function computerScore() {
     let score = computerPoint++;
     console.log(`Computer score is ${score}`);
+    compDisplay.textContent = `Computer score: ${score}`;
     loseCount(score);
 }
 
@@ -73,8 +75,14 @@ function computerScore() {
     const container = document.querySelector("#container");
 
     const content = document.createElement("h2");
+    const scoreDisplay = document.createElement("h3");
+    const compDisplay = document.createElement("h3");
     content.classList.add("h2");
+    scoreDisplay.classList.add("score");
+    compDisplay.classList.add("score");
     container.appendChild(content);
+    container.appendChild(scoreDisplay);
+    container.appendChild(compDisplay);
 
 function winCount(score) {
     if (score === 5) {
