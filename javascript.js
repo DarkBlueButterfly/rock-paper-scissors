@@ -81,21 +81,28 @@ function playGame() {
 
 playGame();
 */
-
+/*
 function getHumanChoice() {
-    const rock = document.querySelector("#btn-rock");
-    const paper = document.querySelector("#btn-paper");
-    const scissors = document.querySelector("#btn-scissors");
+    // const rock = document.querySelector("#rock");
+    // const paper = document.querySelector("#paper");
+    // const scissors = document.querySelector("#scissors");
     
     const buttons = document.querySelectorAll("button");
     
-    //let humanChoice = "string";
+    let humanChoice = "string";
     
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
-            console.log(button.id);
+            //console.log(button.id);
+            return humanChoice = button.id;
         });
     });
+
+    return buttons;
+
+    // if(humanChoice === "rock") {
+        
+    // }
 
     // if(rock.onclick) {
     //     humanChoice = "rock";
@@ -118,12 +125,50 @@ function getHumanChoice() {
     //     console.log("scissors");
     //     return humanChoice = "scissors";
     // });
-}
+}*/
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// const buttons = document.querySelectorAll("button");
 
-function playRound(computerChoice, humanChoice) {
+// buttons.forEach((button) => {
+//     button.addEventListener("click", () => {
+//         getHumanChoice(button.id.toString())})
+//     });
+
+// function getHumanChoice(userChoice) {
+//     if(userChoice === "rock"){
+//         console.log("rock");
+//     } else if(userChoice === "paper") {
+//         return "paper";
+//     } else if(userChoice === "scissors") {
+//         return "scissors";
+//     }
+// }
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () => {
+    playRound("rock");
+});
+
+paper.addEventListener("click", () => {
+    playRound("paper");
+});
+
+scissors.addEventListener("click", () => {
+    playRound("scissors");
+});
+
+// function getHumanChoice(userChoice) {
+//     return userChoice;
+// }
+
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
+
+function playRound(humanChoice) {
+    const computerChoice = getComputerChoice();
     if (computerChoice === humanChoice) {
         console.log(`It's a tie! You both chose ${humanChoice}!`);
     } else if (
@@ -139,6 +184,6 @@ function playRound(computerChoice, humanChoice) {
     }
 }
 
-playRound (computerSelection, humanSelection);
+// playRound (computerSelection, humanSelection);
 //console.log(`Round ${i}: User Score: ${humanScore} || Computer Score: ${computerScore}`);
     
