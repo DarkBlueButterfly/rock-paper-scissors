@@ -42,15 +42,13 @@ function playRound(humanChoice) {
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        //humanScore++; 
-        humanScore();
         console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
         content.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
+        humanScore();
     } else {
-        //computerScore++; 
-        computerScore();
         console.log(`You lose! ${computerChoice} beats ${humanChoice}...`);
         content.textContent = `You lose! ${computerChoice} beats ${humanChoice}...`;
+        computerScore();
     }
 }
 
@@ -63,27 +61,47 @@ let humanPoint = 1;
 let computerPoint = 1;
 
 function humanScore() {
-    // let humanPoint = 0;
     let score = humanPoint++;
     console.log(`User score is ${score}`);
+    winCount(score);
 }
 
 function computerScore() {
     let score = computerPoint++;
     console.log(`Computer score is ${score}`);
+    loseCount(score);
 }
 
 // first player to reach 5 points wins:
-function winCount(humanScore, computerScore) {
-    // let humanScore = 0;
-    // let computerScore = 0;
 
-
-    // if (humanScore > computerScore) {
-    //     console.log("You won the series!");
-    // } else if (computerScore > humanScore) {
-    //     console.log("You lost the game!");
-    // } else {
-    //     console.log("It's a tie game!")
-    // }
+function winCount(score) {
+    if (score === 5) {
+        console.log("You won the series! You scored 5 points before the computer!");
+    } 
 }
+
+function loseCount(score) {
+    if (score === 5) {
+        console.log("Oops! You lost! Computer scored 5 points before you!");
+    }
+}
+
+// function winCount(humanScore, computerScore) {
+//     // let humanScore = 0;
+//     // let computerScore = 0;
+//     const humanSelection = humanScore();
+//     const computerSelection = computerScore();
+
+//     if (humanSelection === 5) {
+//         console.log("You won the series!");
+//     } else if (computerSelection === 5) {
+//         console.log("Oops! You lost!");
+//     }
+//     // if (humanScore > computerScore) {
+//     //     console.log("You won the series!");
+//     // } else if (computerScore > humanScore) {
+//     //     console.log("You lost the game!");
+//     // } else {
+//     //     console.log("It's a tie game!")
+//     // }
+// }
