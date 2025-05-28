@@ -52,10 +52,6 @@ function playRound(humanChoice) {
     }
 }
 
-
-
-//console.log(`Round ${i}: User Score: ${humanScore} || Computer Score: ${computerScore}`);
-
 // Score keeping:
 let humanPoint = 1;
 let computerPoint = 1;
@@ -74,34 +70,24 @@ function computerScore() {
 
 // first player to reach 5 points wins:
 
+    const container = document.querySelector("#container");
+
+    const content = document.createElement("h2");
+    content.classList.add("h2");
+    container.appendChild(content);
+
 function winCount(score) {
     if (score === 5) {
         console.log("You won the series! You scored 5 points before the computer!");
+        content.setAttribute("style", "color: magenta;");
+        content.textContent = "You won the series! You scored 5 points before the computer!";
     } 
 }
 
 function loseCount(score) {
     if (score === 5) {
         console.log("Oops! You lost! Computer scored 5 points before you!");
+        content.style.color = "red";
+        content.textContent = "Oops! You lost! Computer scored 5 points before you!";
     }
 }
-
-// function winCount(humanScore, computerScore) {
-//     // let humanScore = 0;
-//     // let computerScore = 0;
-//     const humanSelection = humanScore();
-//     const computerSelection = computerScore();
-
-//     if (humanSelection === 5) {
-//         console.log("You won the series!");
-//     } else if (computerSelection === 5) {
-//         console.log("Oops! You lost!");
-//     }
-//     // if (humanScore > computerScore) {
-//     //     console.log("You won the series!");
-//     // } else if (computerScore > humanScore) {
-//     //     console.log("You lost the game!");
-//     // } else {
-//     //     console.log("It's a tie game!")
-//     // }
-// }
