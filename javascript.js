@@ -28,8 +28,15 @@ scissors.addEventListener("click", () => {
 
 function playRound(humanChoice) {
     const computerChoice = getComputerChoice();
+    const container = document.querySelector("#container");
+
+    const content = document.createElement("div");
+    content.classList.add("content");
+    container.appendChild(content);
+
     if (computerChoice === humanChoice) {
         console.log(`It's a tie! You both chose ${humanChoice}!`);
+        content.textContent = `It's a tie! You both chose ${humanChoice}!`;
     } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
@@ -37,12 +44,13 @@ function playRound(humanChoice) {
     ) {
         //humanScore++; 
         console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        content.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
     } else {
         //computerScore++; 
         console.log(`You lose! ${computerChoice} beats ${humanChoice}...`);
+        content.textContent = `You lose! ${computerChoice} beats ${humanChoice}...`;
     }
 }
 
-// playRound (computerSelection, humanSelection);
 //console.log(`Round ${i}: User Score: ${humanScore} || Computer Score: ${computerScore}`);
-    
+
